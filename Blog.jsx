@@ -237,9 +237,9 @@ export default function Blog() {
             {/* --- MODAL DE INFOGRAFÍA Y AUDIO --- */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-[100] flex flex-col bg-[#050505] text-white">
-                    {/* Header del Modal */}
-                    <div className="w-full flex justify-between items-center p-4 md:p-6 bg-gradient-to-b from-black/80 to-transparent absolute top-0 left-0 right-0 z-10">
-                        <span className="font-mono text-xs tracking-widest text-[#b8c4d4] uppercase">Infografía Interactiva</span>
+                    {/* Header Pijo Fijo (Non-scrollable) */}
+                    <div className="w-full flex justify-between items-center p-4 md:p-6 bg-[#050505] border-b border-white/10 shrink-0">
+                        <span className="font-mono text-[0.65rem] md:text-xs tracking-widest text-[#b8c4d4] uppercase">Infografía Interactiva</span>
                         <button
                             onClick={() => {
                                 setIsModalOpen(false);
@@ -247,18 +247,28 @@ export default function Blog() {
                                     audioRef.current.pause();
                                 }
                             }}
-                            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors backdrop-blur-md"
+                            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                         >
                             <X size={20} />
                         </button>
                     </div>
 
-                    {/* Contenido Visual con Reproductor Integrado Arriba (Scrollable en móviles) */}
-                    <div className="flex-1 overflow-auto w-full flex flex-col items-center mt-16 mb-6">
-                        {/* REPRODUCTOR NATIVO DE HTML5 - Ahora integrado en el flujo, no fijo */}
-                        <div className="w-full max-w-3xl px-4 md:px-8 pt-4 pb-6 flex flex-col items-center gap-3">
+                    {/* Area Central (ÚNICA PARTE SCROLLABLE) */}
+                    <div className="flex-1 overflow-auto w-full flex flex-col items-center bg-[#0a0a0a]">
+                        <div className="w-full max-w-5xl px-2 md:px-8 py-6 flex items-center justify-center">
+                            <img
+                                src="/images/infografia.png"
+                                alt="Infografía Detallada"
+                                className="w-full h-auto object-contain rounded-lg"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Footer Fijo en la caja Flex (Non-scrollable) */}
+                    <div className="w-full shrink-0 bg-[#050505] border-t border-white/10 flex flex-col items-center px-4 py-6 md:py-8 pb-10 md:pb-8">
+                        <div className="w-full max-w-3xl flex flex-col items-center gap-3">
                             <p className="text-[#f0ebe2] text-xs md:text-sm font-mono tracking-widest uppercase opacity-80 text-center">
-                                Cápsula Sonora: Mezcal Casa Orazal
+                                Cápsula Sonora: Maguey Ancestral
                             </p>
                             <audio
                                 ref={audioRef}
@@ -272,18 +282,7 @@ export default function Blog() {
                                 Tu navegador no soporta el elemento de audio.
                             </audio>
                         </div>
-
-                        {/* Infografía */}
-                        <div className="w-full max-w-5xl px-2 md:px-8 pb-10 flex items-center justify-center">
-                            <img
-                                src="/images/infografia.png"
-                                alt="Infografía Detallada"
-                                className="w-full h-auto object-contain shadow-2xl rounded-lg"
-                            />
-                        </div>
                     </div>
-
-
                 </div>
             )}
         </div>
