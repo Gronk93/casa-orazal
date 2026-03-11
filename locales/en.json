@@ -1,0 +1,163 @@
+{
+    "nav": {
+        "home": "Home",
+        "products": "Products",
+        "services": "Services",
+        "blog": "Blog",
+        "contact": "Contact",
+        "store": "Store"
+    },
+    "hero": {
+        "pre_title": "Oaxaca · Mexico",
+        "title_line1": "Ancestral",
+        "title_line2": "Mezcal",
+        "subtitle": "Ancestral mezcal with character, origin, and a presence built to endure.",
+        "cta_primary": "Meet Us",
+        "cta_secondary": "Talk to Us",
+        "scroll_hint": "Discover the brand",
+        "visual_hint": "Coming soon: interactive 3D experience"
+    },
+    "about": {
+        "label": "About Us",
+        "title": "A vision that honors the origin",
+        "body": "CASA ORAZAL is born from a vision that honors origin, time, and the authentic expression of ancestral mezcal. Each bottle seeks to convey a story of character, tradition, and care for the process.",
+        "body2": "Our relationship with agave goes beyond production. It is a commitment to the land, to the master distillers, and to a way of making that accepts no shortcuts.",
+        "vision_label": "Our vision",
+        "vision": "To bring the essence of ancestral Mexican mezcal to connoisseurs around the world, without ever losing the authenticity of its origin."
+    },
+    "origin": {
+        "label": "Origin",
+        "title": "From agave to glass",
+        "subtitle": "A process that is never in a hurry",
+        "body": "At CASA ORAZAL every stage of the process is an act of respect. From the selection of the mature agave to distillation in copper pot stills, every decision is guided by ancestral knowledge passed down through generations.",
+        "items": {
+            "agave": {
+                "title": "Agave Selection",
+                "desc": "Only plants at their optimal maturity peak, with years of natural growth."
+            },
+            "cooking": {
+                "title": "Earth Oven Roasting",
+                "desc": "Pit-roasted with wood fire, the method that gives depth and character."
+            },
+            "fermentation": {
+                "title": "Natural Fermentation",
+                "desc": "In wooden vats with wild yeasts from the surroundings, without chemical intervention."
+            },
+            "distillation": {
+                "title": "Artisanal Distillation",
+                "desc": "Copper pot still, temperature controlled by hand, with the eye of a master distiller."
+            }
+        }
+    },
+    "products": {
+        "label": "Our Mezcals",
+        "pre_title": "Our collection",
+        "title": "Two expressions, one character",
+        "subtitle": "Two expressions from the same origin. Each mezcal is the result of hands, earth, time, and fire — never repeated, always unique.",
+        "discover": "Discover",
+        "view_all": "Explore our mezcals",
+        "arroqueno": {
+            "name": "Arroqueño",
+            "descriptor": "Vegetal depth, wild character",
+            "desc": "Vegetal character, depth, and a marked personality. Earth oven roasting defines its unique and unmistakable profile.",
+            "notes": "Earthy, intensely smoky, with hints of dark chocolate and wild herbs.",
+            "differentiator": "The truest expression of the ancestral pit-roasting process"
+        },
+        "papalometl": {
+            "name": "Papalometl",
+            "descriptor": "Our premium expression",
+            "desc": "Intensity, elegance, and sophistication in their purest form. Papalometl is a rarity that speaks of time, patience, and mastery.",
+            "notes": "Complex, mineral, with layers of ripe fruit, spices, and an eternal finish.",
+            "differentiator": "Wild agave of slow maturation, the premium expression of our house"
+        },
+        "ancestral_process": {
+            "label": "Process",
+            "title": "The ancestral process",
+            "subtitle": "Handcrafted, made with time",
+            "body": "Mezcal production at CASA ORAZAL follows methods that predate the industrial world. No shortcuts, no rush. Only the knowledge of master distillers, respect for the agave, and the discipline of an inherited craft."
+        }
+    },
+    "services": {
+        "label": "Services",
+        "title": "Experiences to remember",
+        "subtitle": "We design unique moments around ancestral mezcal.",
+        "cta": "Talk to Us",
+        "cta_info": "Request more information",
+        "categories": {
+            "corporate_tastings": {
+                "title": "Corporate Tastings",
+                "desc": "Exclusive tasting experiences designed for corporate teams. A space to connect, learn, and celebrate."
+            },
+            "private_tastings": {
+                "title": "Private Tastings",
+                "desc": "Intimate sessions tailored for select groups, connoisseurs, or special celebrations."
+            },
+            "private_events": {
+                "title": "Private Events",
+                "desc": "CASA ORAZAL presence at your events. Elegance, product, and brand narrative in every glass."
+            },
+            "brand_experiences": {
+                "title": "Brand Experiences",
+                "desc": "Activations that unite the sensory universe of mezcal with your brand. Unique and memorable collaborations."
+            },
+            "activations": {
+                "title": "Activations",
+                "desc": "Presence at fairs, galleries, showrooms, and premium spaces. Your audience, our story."
+            },
+            "distribution": {
+                "title": "Distribution & Alliances",
+                "desc": "We seek commercial partners committed to quality. Let's talk about bringing CASA ORAZAL to your market."
+            }
+        }
+    },
+    "blog": {
+        "label": "Editorial Blog",
+        "title": "From origin to palate",
+        "subtitle": "Stories about mezcal, its process, and its culture.",
+        "read_more": "Read article",
+        "back": "Back to blog"
+    },
+    "contact": {
+        "label": "Contact",
+        "title": "Let's talk",
+        "subtitle": "We are ready to discuss the brand, our labels, experiences, and collaboration opportunities.",
+        "offices": "Offices",
+        "sales": "Sales",
+        "whatsapp": "Write to us on WhatsApp",
+        "follow": "Follow us",
+        "email_offices": "oficinas@casaorazal.com",
+        "email_sales": "ventas@casaorazal.com",
+        "phone": "+52 951 000 0000",
+        "address": "Oaxaca, México"
+    },
+    "register": {
+        "label": "Community",
+        "title": "Join the community",
+        "subtitle": "Register to discover public tastings, relevant news, and new points of sale from CASA ORAZAL. Curated communication, without excess.",
+        "name": "Full name",
+        "country": "Country",
+        "email": "Email address",
+        "phone": "Mobile number (optional)",
+        "submit": "Join now",
+        "success": "Welcome to the CASA ORAZAL community. You will receive only relevant information.",
+        "privacy": "Your information is private. No spam.",
+        "select_country": "Select your country"
+    },
+    "store": {
+        "label": "Official Store",
+        "title": "Our Collection",
+        "subtitle": "Take home the result of 13 years of waiting under the solar fire.",
+        "buy_now": "Shop Now",
+        "shipping_note": "* Free shipping across Mexico on orders over $2,999 MXN"
+    },
+    "footer": {
+        "tagline": "Ancestral mezcal. Origin. Character.",
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "social": "Social",
+        "privacy": "Privacy policy",
+        "legal": "Terms & conditions",
+        "rights": "All rights reserved",
+        "age_warning": "Alcoholic beverage. Sale prohibited to minors."
+    }
+}
