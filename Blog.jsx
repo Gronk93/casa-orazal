@@ -68,16 +68,39 @@ export default function Blog() {
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
 
-    const togglePlay = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const togglePlay = async (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
         if (audioRef.current) {
-            if (isPlaying) {
-                audioRef.current.pause();
-            } else {
-                audioRef.current.play();
+            try {
+                if (isPlaying) {
+                    audioRef.current.pause();
+                    setIsPlaying(false);
+                } else {
+                    // Importante para móviles: asegurar que esté cargado antes de dar play
+                    if (audioRef.current.readyState === 0) {
+                        audioRef.current.load();
+                    }
+                    const playPromise = audioRef.current.play();
+
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            setIsPlaying(true);
+                        }).catch(error => {
+                            console.error("Audio playback failed on mobile:", error);
+                            setIsPlaying(false);
+                            // Podríamos mostrar un toast/alerta aquí si sigue fallando
+                        });
+                    } else {
+                        setIsPlaying(true);
+                    }
+                }
+            } catch (err) {
+                console.error("Error toggling audio:", err);
             }
-            setIsPlaying(!isPlaying);
         }
     };
 
@@ -285,7 +308,13 @@ export default function Blog() {
                     <div className="w-full flex justify-between items-center p-4 md:p-6 bg-gradient-to-b from-black/80 to-transparent absolute top-0 left-0 right-0 z-10">
                         <span className="font-mono text-xs tracking-widest text-[#b8c4d4] uppercase">Infografía Interactiva</span>
                         <button
-                            onClick={() => setIsModalOpen(false)}
+                            onClick={() => {
+                                setIsModalOpen(false);
+                                if (audioRef.current && isPlaying) {
+                                    audioRef.current.pause();
+                                    setIsPlaying(false);
+                                }
+                            }}
                             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors backdrop-blur-md"
                         >
                             <X size={20} />
@@ -355,11 +384,12 @@ export default function Blog() {
                         </div>
                     </div>
 
-                    {/* Elemento Oculto de Audio */}
+                    {/* Elemento Oculto de Audio - Se agrega 'playsInline' por Safari iOS */}
                     <audio
                         ref={audioRef}
                         id="modal-audio"
-                        preload="metadata"
+                        preload="auto"
+                        playsInline
                         src="/audios/mezcal_casa_orazal.m4a"
                         onTimeUpdate={handleTimeUpdate}
                         onLoadedMetadata={handleLoadedMetadata}
