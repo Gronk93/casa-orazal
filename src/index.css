@@ -37,7 +37,7 @@ html {
 body {
   background-color: #080808;
   color: #f0ebe2;
-  font-family: 'Kalam', cursive;
+  font-family: 'Caveat Brush', cursive;
   font-weight: 300;
   font-size: 1.05rem;
   -webkit-font-smoothing: antialiased;
@@ -93,12 +93,12 @@ p {
 
 /* Display script — uso especial para acentos artesanales */
 .font-display {
-  font-family: 'Kalam', cursive;
+  font-family: 'Caveat Brush', cursive;
 }
 
 /* UI labels */
 .font-ui {
-  font-family: 'Kalam', cursive;
+  font-family: 'Caveat Brush', cursive;
   font-weight: 300;
   letter-spacing: 0.08em;
 }
@@ -282,7 +282,7 @@ p {
   gap: 0.6rem;
   padding: 0.2rem 0;
   color: #b8c4d4;
-  font-family: 'Kalam', system-ui, sans-serif;
+  font-family: 'Caveat Brush', system-ui, sans-serif;
   font-size: 0.68rem;
   font-weight: 300;
   letter-spacing: 0.24em;
@@ -323,7 +323,7 @@ p {
   gap: 0.6rem;
   padding: 0.2rem 0;
   color: rgba(240, 235, 226, 0.4);
-  font-family: 'Kalam', system-ui, sans-serif;
+  font-family: 'Caveat Brush', system-ui, sans-serif;
   font-size: 0.68rem;
   font-weight: 300;
   letter-spacing: 0.24em;
@@ -364,7 +364,7 @@ p {
   gap: 0.4rem;
   padding: 0;
   color: #b8c4d4;
-  font-family: 'Kalam', cursive;
+  font-family: 'Caveat Brush', cursive;
   font-size: 1.5rem;
   background: transparent;
   border: none;

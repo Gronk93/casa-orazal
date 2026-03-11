@@ -185,7 +185,7 @@ export default function Blog() {
                                                 Cápsula Sonora
                                             </p>
 
-                                            <h2 className="text-3xl md:text-5xl font-light text-[#f0ebe2] mb-6" style={{ fontFamily: 'Rye, cursive' }}>
+                                            <h2 className="text-3xl md:text-5xl font-light text-[#f0ebe2] mb-6" style={{ fontFamily: 'Amatic SC, cursive' }}>
                                                 {post.title[lang]}
                                             </h2>
 
@@ -257,7 +257,7 @@ export default function Blog() {
                                     <article className="h-full flex flex-col">
                                         <div className="aspect-[4/3] md:aspect-[16/10] relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c0c0c 0%, #000000 100%)' }}>
                                             <div className="absolute inset-0 flex items-center justify-center">
-                                                <div className="text-[8rem] font-light opacity-[0.04]" style={{ fontFamily: 'Rye, cursive', color: '#b8c4d4' }}>
+                                                <div className="text-[8rem] font-light opacity-[0.04]" style={{ fontFamily: 'Amatic SC, cursive', color: '#b8c4d4' }}>
                                                     {post.category[lang][0]}
                                                 </div>
                                             </div>
@@ -273,7 +273,7 @@ export default function Blog() {
                                                 <span className="flex items-center gap-2"><Calendar size={12} strokeWidth={1.5} /> {post.date}</span>
                                                 <span className="flex items-center gap-2"><Clock size={12} strokeWidth={1.5} /> {post.readTime}</span>
                                             </div>
-                                            <h2 className="text-2xl md:text-3xl font-light text-[#f0ebe2] mb-4 group-hover:text-[#b8c4d4] transition-colors duration-300" style={{ fontFamily: 'Rye, cursive' }}>{post.title[lang]}</h2>
+                                            <h2 className="text-2xl md:text-3xl font-light text-[#f0ebe2] mb-4 group-hover:text-[#b8c4d4] transition-colors duration-300" style={{ fontFamily: 'Amatic SC, cursive' }}>{post.title[lang]}</h2>
                                             <p className="text-[1.05rem] text-[#c8bfb0] leading-relaxed flex-1 overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                                                 {post.excerpt[lang]}
                                             </p>

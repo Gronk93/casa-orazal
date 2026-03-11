@@ -41,7 +41,7 @@ export default function Register() {
                         </div>
                         <h1
                             className="text-4xl md:text-6xl font-light mb-5"
-                            style={{ fontFamily: 'Rye, cursive' }}
+                            style={{ fontFamily: 'Amatic SC, cursive' }}
                         >
                             {t('register.title')}
                         </h1>
@@ -59,7 +59,7 @@ export default function Register() {
                             <CheckCircle size={40} className="text-[#b8c4d4] mx-auto mb-5 opacity-80" />
                             <h2
                                 className="text-2xl font-light text-[#f0ebe2] mb-3"
-                                style={{ fontFamily: 'Rye, cursive' }}
+                                style={{ fontFamily: 'Amatic SC, cursive' }}
                             >
                                 Bienvenido, {form.name}.
                             </h2>

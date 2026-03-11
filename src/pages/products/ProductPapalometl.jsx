@@ -64,10 +64,10 @@ function AgaveStar({ cx, cy, size = 30, opacity = 0.12 }) {
 function DataRow({ label, value }) {
     return (
         <div className="flex gap-4 items-baseline py-3" style={{ borderBottom: '1px solid rgba(180,190,210,0.1)' }}>
-            <span style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(180,190,210,0.45)', minWidth: '8rem', flexShrink: 0 }}>
+            <span style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(180,190,210,0.45)', minWidth: '8rem', flexShrink: 0 }}>
                 {label}
             </span>
-            <span style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 1.6 }}>
+            <span style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 1.6 }}>
                 {value}
             </span>
         </div>
@@ -146,13 +146,13 @@ export default function ProductPapalometl() {
 
                 {/* Contenido */}
                 <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 2rem', maxWidth: '900px' }}>
-                    <p style={{ fontFamily: 'Kalam, cursive', fontSize: 'clamp(1.2rem, 3vw, 2rem)', color: 'rgba(160,175,200,0.6)', marginBottom: '0.5rem', animation: 'fadeIn 1s ease forwards' }}>
+                    <p style={{ fontFamily: 'Caveat Brush, cursive', fontSize: 'clamp(1.2rem, 3vw, 2rem)', color: 'rgba(160,175,200,0.6)', marginBottom: '0.5rem', animation: 'fadeIn 1s ease forwards' }}>
                         Casa Orazal
                     </p>
                     {/* Línea plateada delgada */}
                     <div style={{ width: '100%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(200,215,235,0.3), transparent)', marginBottom: '1.5rem' }} />
                     <h1 style={{
-                        fontFamily: 'Rye, cursive',
+                        fontFamily: 'Amatic SC, cursive',
                         fontSize: 'clamp(2.5rem, 10vw, 9rem)',
                         fontWeight: 200,
                         fontStyle: 'italic',
@@ -179,7 +179,7 @@ export default function ProductPapalometl() {
 
                 {/* Scroll indicator */}
                 <div style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', animation: 'fadeIn 2s ease forwards' }}>
-                    <span style={{ fontFamily: 'Kalam, cursive', fontSize: '0.5rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.35)' }}>Descubre</span>
+                    <span style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.5rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.35)' }}>Descubre</span>
                     <div style={{ width: '1px', height: '3rem', background: 'linear-gradient(to bottom, rgba(160,175,200,0.4), transparent)' }} />
                 </div>
             </section>
@@ -220,7 +220,7 @@ export default function ProductPapalometl() {
             {/* ═══ CATA ═══ */}
             <section style={{ padding: '5rem 0', borderTop: '1px solid rgba(180,190,210,0.08)' }}>
                 <div className="container-orazal">
-                    <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.45)', marginBottom: '4rem' }}>
+                    <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.45)', marginBottom: '4rem' }}>
                         Notas de cata
                     </p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem' }}>
@@ -230,12 +230,12 @@ export default function ProductPapalometl() {
                             { label: 'Maridaje', items: PRODUCT.pairing },
                         ].map(({ label, items }) => (
                             <div key={label}>
-                                <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#9aa8c0', marginBottom: '1.5rem' }}>{label}</p>
+                                <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#9aa8c0', marginBottom: '1.5rem' }}>{label}</p>
                                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                     {items.map(item => (
                                         <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                                             <span style={{ color: '#9aa8c0', marginTop: '2px', fontSize: '0.75rem', flexShrink: 0 }}>—</span>
-                                            <span style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 1.7 }}>{item}</span>
+                                            <span style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 1.7 }}>{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -252,10 +252,10 @@ export default function ProductPapalometl() {
 
                         {/* 1. Proceso Ancestral (Izquierda) */}
                         <div style={{ borderLeft: '1px solid rgba(160,175,200,0.25)', paddingLeft: '2rem' }}>
-                            <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#9aa8c0', marginBottom: '1.5rem' }}>
+                            <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#9aa8c0', marginBottom: '1.5rem' }}>
                                 Proceso ancestral
                             </p>
-                            <p style={{ fontFamily: 'Kalam, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 2 }}>
+                            <p style={{ fontFamily: 'Caveat Brush, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#a8b8cc', lineHeight: 2 }}>
                                 {PRODUCT.process}
                             </p>
                         </div>
@@ -272,7 +272,7 @@ export default function ProductPapalometl() {
 
                         {/* 3. Ficha Técnica (Derecha) */}
                         <div>
-                            <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.45)', marginBottom: '2.5rem' }}>
+                            <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.45)', marginBottom: '2.5rem' }}>
                                 Ficha técnica
                             </p>
                             <DataRow label="Grado alcohólico" value={PRODUCT.abv} />
@@ -289,10 +289,10 @@ export default function ProductPapalometl() {
             {/* ═══ CTA ═══ */}
             <section style={{ padding: '7rem 0', textAlign: 'center', borderTop: '1px solid rgba(180,190,210,0.08)' }}>
                 <div className="container-orazal">
-                    <p style={{ fontFamily: 'Kalam, cursive', fontSize: '2rem', color: 'rgba(160,175,200,0.5)', marginBottom: '1rem' }}>
+                    <p style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '2rem', color: 'rgba(160,175,200,0.5)', marginBottom: '1rem' }}>
                         Una rareza, tuya
                     </p>
-                    <h2 style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', fontWeight: 200, fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#d0d8e8', marginBottom: '2.5rem', lineHeight: 1.2 }}>
+                    <h2 style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', fontWeight: 200, fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#d0d8e8', marginBottom: '2.5rem', lineHeight: 1.2 }}>
                         Solicita información
                     </h2>
                     <Link to="/contacto" className="btn-primary">
@@ -300,7 +300,7 @@ export default function ProductPapalometl() {
                     </Link>
                     <div style={{ marginTop: '3rem' }}>
                         <Link to="/productos"
-                            style={{ fontFamily: 'Kalam, cursive', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.3)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', transition: 'color 0.3s' }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(160,175,200,0.3)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', transition: 'color 0.3s' }}
                             onMouseEnter={e => e.currentTarget.style.color = 'rgba(180,195,220,0.65)'}
                             onMouseLeave={e => e.currentTarget.style.color = 'rgba(160,175,200,0.3)'}
                         >

@@ -61,10 +61,10 @@ function CircleOrnament({ size = 200, opacity = 0.06 }) {
 function DataRow({ label, value }) {
     return (
         <div className="flex gap-4 items-baseline py-3" style={{ borderBottom: '1px solid rgba(74,138,74,0.12)' }}>
-            <span style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', minWidth: '8rem', flexShrink: 0 }}>
+            <span style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', minWidth: '8rem', flexShrink: 0 }}>
                 {label}
             </span>
-            <span style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#7aaa7a', lineHeight: 1.6 }}>
+            <span style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#7aaa7a', lineHeight: 1.6 }}>
                 {value}
             </span>
         </div>
@@ -119,7 +119,7 @@ export default function ProductArroqueno() {
                 {/* Número */}
                 <div style={{
                     position: 'absolute', top: '10rem', left: '4%',
-                    fontFamily: 'Rye, cursive',
+                    fontFamily: 'Amatic SC, cursive',
                     fontSize: 'clamp(3.5rem, 15vw, 16rem)',
                     fontWeight: 200, color: 'rgba(74,138,74,0.05)',
                     lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
@@ -129,13 +129,13 @@ export default function ProductArroqueno() {
 
                 {/* Contenido */}
                 <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 2rem' }}>
-                    <p style={{ fontFamily: 'Kalam, cursive', fontSize: 'clamp(1.2rem, 3vw, 2rem)', color: 'rgba(100,170,100,0.65)', marginBottom: '1rem', animation: 'fadeIn 1s ease forwards' }}>
+                    <p style={{ fontFamily: 'Caveat Brush, cursive', fontSize: 'clamp(1.2rem, 3vw, 2rem)', color: 'rgba(100,170,100,0.65)', marginBottom: '1rem', animation: 'fadeIn 1s ease forwards' }}>
                         Casa Orazal
                     </p>
                     <GrecaZapoteca />
                     <div style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>
                         <h1 style={{
-                            fontFamily: 'Rye, cursive',
+                            fontFamily: 'Amatic SC, cursive',
                             fontSize: 'clamp(3rem, 15vw, 17rem)',
                             fontWeight: 200,
                             fontStyle: 'italic',
@@ -161,7 +161,7 @@ export default function ProductArroqueno() {
 
                 {/* Scroll indicator */}
                 <div style={{ position: 'absolute', bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', animation: 'fadeIn 2s ease forwards' }}>
-                    <span style={{ fontFamily: 'Kalam, cursive', fontSize: '0.5rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.45)' }}>Descubre</span>
+                    <span style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.5rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.45)' }}>Descubre</span>
                     <div style={{ width: '1px', height: '3rem', background: 'linear-gradient(to bottom, rgba(74,138,74,0.5), transparent)' }} />
                 </div>
             </section>
@@ -184,13 +184,13 @@ export default function ProductArroqueno() {
                         {/* Texto 40% (4 de 10 columnas en pantallas grandes) */}
                         <div className="lg:col-span-4 text-center flex flex-col justify-center px-4 lg:pl-8">
                             <div style={{ marginBottom: '2rem' }} className="flex justify-center">
-                                <span style={{ fontFamily: 'Rye, cursive', fontSize: '2rem', color: 'rgba(74,138,74,0.3)' }}>❝</span>
+                                <span style={{ fontFamily: 'Amatic SC, cursive', fontSize: '2rem', color: 'rgba(74,138,74,0.3)' }}>❝</span>
                             </div>
-                            <p style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', fontWeight: 'bold', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'rgba(100,170,100,0.85)', lineHeight: 1.4, textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                            <p style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', fontWeight: 'bold', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'rgba(100,170,100,0.85)', lineHeight: 1.4, textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
                                 {PRODUCT.quote}
                             </p>
                             <div style={{ marginTop: '2rem' }} className="flex justify-center">
-                                <span style={{ fontFamily: 'Rye, cursive', fontSize: '2rem', color: 'rgba(74,138,74,0.3)' }}>❞</span>
+                                <span style={{ fontFamily: 'Amatic SC, cursive', fontSize: '2rem', color: 'rgba(74,138,74,0.3)' }}>❞</span>
                             </div>
                         </div>
                     </div>
@@ -229,7 +229,7 @@ export default function ProductArroqueno() {
             {/* --- CATA --- */}
             <section style={{ padding: '5rem 0', borderTop: '1px solid rgba(74,138,74,0.12)' }}>
                 <div className="container-orazal">
-                    <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', marginBottom: '4rem' }}>
+                    <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', marginBottom: '4rem' }}>
                         Notas de cata
                     </p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem' }}>
@@ -239,12 +239,12 @@ export default function ProductArroqueno() {
                             { label: 'Maridaje', items: PRODUCT.pairing },
                         ].map(({ label, items }) => (
                             <div key={label}>
-                                <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#4a8a4a', marginBottom: '1.5rem' }}>{label}</p>
+                                <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#4a8a4a', marginBottom: '1.5rem' }}>{label}</p>
                                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                     {items.map(item => (
                                         <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                                             <span style={{ color: '#4a8a4a', marginTop: '2px', fontSize: '0.75rem', flexShrink: 0 }}></span>
-                                            <span style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#8acc8a', lineHeight: 1.7 }}>{item}</span>
+                                            <span style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '1.05rem', color: '#8acc8a', lineHeight: 1.7 }}>{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -264,17 +264,17 @@ export default function ProductArroqueno() {
 
                             {/* Proceso Ancestral */}
                             <div style={{ borderLeft: '2px solid rgba(74,138,74,0.4)', paddingLeft: '2rem', marginBottom: '5rem' }}>
-                                <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#4a8a4a', marginBottom: '1.5rem' }}>
+                                <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#4a8a4a', marginBottom: '1.5rem' }}>
                                     Proceso ancestral
                                 </p>
-                                <p style={{ fontFamily: 'Kalam, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#8acc8a', lineHeight: 2 }}>
+                                <p style={{ fontFamily: 'Caveat Brush, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#8acc8a', lineHeight: 2 }}>
                                     {PRODUCT.process}
                                 </p>
                             </div>
 
                             {/* Ficha Técnica */}
                             <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(74,138,74,0.12)' }}>
-                                <p style={{ fontFamily: 'Rye, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', marginBottom: '2.5rem' }}>
+                                <p style={{ fontFamily: 'Amatic SC, cursive', fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.6)', marginBottom: '2.5rem' }}>
                                     Ficha técnica
                                 </p>
                                 <DataRow label="Grado alcohólico" value={PRODUCT.abv} />
@@ -303,10 +303,10 @@ export default function ProductArroqueno() {
             {/* --- CTA --- */}
             <section style={{ padding: '7rem 0', textAlign: 'center', borderTop: '1px solid rgba(74,138,74,0.12)' }}>
                 <div className="container-orazal">
-                    <p style={{ fontFamily: 'Kalam, cursive', fontSize: '2rem', color: 'rgba(100,170,100,0.6)', marginBottom: '1rem' }}>
+                    <p style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '2rem', color: 'rgba(100,170,100,0.6)', marginBottom: '1rem' }}>
                         ¿Te interesa?
                     </p>
-                    <h2 style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', fontWeight: 200, fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#c8e0c8', marginBottom: '2.5rem', lineHeight: 1.2 }}>
+                    <h2 style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', fontWeight: 200, fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#c8e0c8', marginBottom: '2.5rem', lineHeight: 1.2 }}>
                         Solicita información
                     </h2>
                     <Link to="/contacto" className="btn-primary">
@@ -314,7 +314,7 @@ export default function ProductArroqueno() {
                     </Link>
                     <div style={{ marginTop: '3rem' }}>
                         <Link to="/productos"
-                            style={{ fontFamily: 'Kalam, cursive', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.4)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', transition: 'color 0.3s' }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(74,138,74,0.4)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', transition: 'color 0.3s' }}
                             onMouseEnter={e => e.currentTarget.style.color = 'rgba(100,170,100,0.7)'}
                             onMouseLeave={e => e.currentTarget.style.color = 'rgba(74,138,74,0.4)'}
                         >

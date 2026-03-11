@@ -1,4 +1,4 @@
-import { ShoppingBag, ArrowRight } from 'lucide-react';
+﻿import { ShoppingBag, ArrowRight } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -57,7 +57,7 @@ export default function Store() {
                     </div>
                     <h1
                         className="text-4xl md:text-5xl lg:text-7xl font-light mb-6"
-                        style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', color: '#8acc8a' }}
+                        style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', color: '#8acc8a' }}
                     >
                         {t('store.title')}
                     </h1>
@@ -83,10 +83,10 @@ export default function Store() {
                             <div className="relative z-10 bg-[#071207] border border-[rgba(74,138,74,0.15)] rounded-2xl p-8 flex flex-col h-full overflow-hidden hover:border-[rgba(74,138,74,0.3)] transition-colors duration-500">
 
                                 <div className="flex justify-between items-start mb-6">
-                                    <span style={{ fontFamily: 'Kalam, cursive', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b8c4d4' }}>
+                                    <span style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b8c4d4' }}>
                                         {p.badge}
                                     </span>
-                                    <span style={{ fontFamily: 'Kalam, cursive', fontSize: '1rem', color: '#f0ebe2' }}>
+                                    <span style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '1rem', color: '#f0ebe2' }}>
                                         {p.volume}
                                     </span>
                                 </div>
@@ -100,7 +100,7 @@ export default function Store() {
                                 </div>
 
                                 <div className="flex-1 text-center">
-                                    <h2 style={{ fontFamily: 'Rye, cursive', fontSize: '2.5rem', color: '#f0ebe2', marginBottom: '1rem' }}>
+                                    <h2 style={{ fontFamily: 'Amatic SC, cursive', fontSize: '2.5rem', color: '#f0ebe2', marginBottom: '1rem' }}>
                                         {p.name}
                                     </h2>
                                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: '#8acc8a', lineHeight: 1.6, marginBottom: '2rem' }}>
@@ -119,7 +119,7 @@ export default function Store() {
                                     >
                                         <div className="absolute inset-0 bg-white/10 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300" />
                                         <ShoppingBag size={18} className="relative z-10 text-[#f0ebe2]" />
-                                        <span style={{ fontFamily: 'Kalam, cursive', fontSize: '0.9rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#f0ebe2' }} className="relative z-10">
+                                        <span style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.9rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#f0ebe2' }} className="relative z-10">
                                             {t('store.buy_now')}
                                         </span>
                                     </button>
@@ -131,7 +131,7 @@ export default function Store() {
                 </div>
 
                 <Reveal delay={0.6} className="mt-20 text-center px-4">
-                    <p style={{ fontFamily: 'Kalam, cursive', fontSize: '0.9rem', color: '#8acc8a', opacity: 0.6 }}>
+                    <p style={{ fontFamily: 'Caveat Brush, cursive', fontSize: '0.9rem', color: '#8acc8a', opacity: 0.6 }}>
                         {t('store.shipping_note')}
                     </p>
                 </Reveal>

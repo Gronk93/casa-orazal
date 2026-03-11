@@ -22,13 +22,13 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <div className="mb-4">
                             <div
-                                style={{ fontFamily: 'Rye, cursive' }}
+                                style={{ fontFamily: 'Amatic SC, cursive' }}
                                 className="text-3xl font-light tracking-[0.25em] text-[#f0ebe2] leading-none"
                             >
                                 CASA
                             </div>
                             <div
-                                style={{ fontFamily: 'Rye, cursive' }}
+                                style={{ fontFamily: 'Amatic SC, cursive' }}
                                 className="text-[0.65rem] tracking-[0.45em] text-[#b8c4d4] mt-0.5"
                             >
                                 ORAZAL

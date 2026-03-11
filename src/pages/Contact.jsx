@@ -108,20 +108,20 @@ export default function Contact() {
                             <div className="flex-1">
                                 <p
                                     className="text-[0.55rem] tracking-[0.28em] uppercase mb-1"
-                                    style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, color: '#3a3a3a' }}
+                                    style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, color: '#3a3a3a' }}
                                 >
                                     WhatsApp directo
                                 </p>
                                 <p
                                     className="text-xl font-light text-[#f0ebe2]"
-                                    style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic' }}
+                                    style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic' }}
                                 >
                                     {t('contact.whatsapp')}
                                 </p>
                             </div>
                             <span
                                 className="text-[#25D366] opacity-40 group-hover:opacity-100 transition-all duration-300 text-[0.6rem] tracking-[0.2em] uppercase"
-                                style={{ fontFamily: 'Kalam, cursive', fontWeight: 300 }}
+                                style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300 }}
                             >
                                 Abrir →
                             </span>
@@ -140,7 +140,7 @@ export default function Contact() {
                                     <div className="flex-1">
                                         <p
                                             className="text-[0.55rem] tracking-[0.22em] uppercase mb-1"
-                                            style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, color: '#3a3a3a' }}
+                                            style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, color: '#3a3a3a' }}
                                         >
                                             {c.label}
                                         </p>
@@ -148,14 +148,14 @@ export default function Contact() {
                                             <a
                                                 href={c.href}
                                                 className="text-[1.05rem] text-[#c8bfb0] hover:text-[#f0ebe2] transition-colors break-all"
-                                                style={{ fontFamily: 'Kalam, cursive', fontWeight: 300 }}
+                                                style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300 }}
                                             >
                                                 {c.value}
                                             </a>
                                         ) : (
                                             <p
                                                 className="text-[1.05rem] text-[#c8bfb0]"
-                                                style={{ fontFamily: 'Kalam, cursive', fontWeight: 300 }}
+                                                style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300 }}
                                             >
                                                 {c.value}
                                             </p>
@@ -170,7 +170,7 @@ export default function Contact() {
                     <Reveal className="text-center">
                         <p
                             className="text-[0.55rem] tracking-[0.3em] uppercase text-[#b8c4d4] mb-8 opacity-70"
-                            style={{ fontFamily: 'Kalam, cursive', fontWeight: 300 }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300 }}
                         >
                             {t('contact.follow')}
                         </p>
@@ -188,7 +188,7 @@ export default function Contact() {
                                         <Icon size={18} className="text-[#b8c4d4]" />
                                         <span
                                             className="text-[0.6rem] tracking-[0.1em] text-[#c8bfb0]"
-                                            style={{ fontFamily: 'Kalam, cursive', fontWeight: 300 }}
+                                            style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300 }}
                                         >
                                             {item.label}
                                         </span>

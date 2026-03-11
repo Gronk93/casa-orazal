@@ -39,7 +39,7 @@ function SectionLabel({ children }) {
             <div className="h-px w-8 bg-[#b8c4d4] opacity-50" />
             <span
                 className="text-[0.72rem] tracking-[0.2em] uppercase text-[#b8c4d4]"
-                style={{ fontFamily: 'Rye, cursive' }}
+                style={{ fontFamily: 'Amatic SC, cursive' }}
             >
                 {children}
             </span>
@@ -177,7 +177,7 @@ export default function Home() {
                             <Reveal delay={0.15}>
                                 <h2
                                     className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8"
-                                    style={{ fontFamily: 'Rye, cursive' }}
+                                    style={{ fontFamily: 'Amatic SC, cursive' }}
                                 >
                                     {t('about.title')}
                                 </h2>
@@ -197,7 +197,7 @@ export default function Home() {
                                     <p className="text-[0.65rem] tracking-[0.2em] uppercase text-[#b8c4d4] mb-2">
                                         {t('about.vision_label')}
                                     </p>
-                                    <p className="text-[1.05rem] text-[#c8bfb0] italic leading-loose" style={{ fontFamily: 'Rye, cursive', fontSize: '1.1rem' }}>
+                                    <p className="text-[1.05rem] text-[#c8bfb0] italic leading-loose" style={{ fontFamily: 'Amatic SC, cursive', fontSize: '1.1rem' }}>
                                         "{t('about.vision')}"
                                     </p>
                                 </div>
@@ -233,7 +233,7 @@ export default function Home() {
                         <SectionLabel>{t('products.label')}</SectionLabel>
                         <h2
                             className="text-4xl md:text-5xl font-light mb-4"
-                            style={{ fontFamily: 'Rye, cursive' }}
+                            style={{ fontFamily: 'Amatic SC, cursive' }}
                         >
                             {t('products.title')}
                         </h2>
@@ -254,7 +254,7 @@ export default function Home() {
                                 >
                                     <div
                                         className="absolute top-0 right-0 text-[10rem] leading-none font-light opacity-[0.04] select-none pointer-events-none text-[#b8c4d4]"
-                                        style={{ fontFamily: 'Rye, cursive' }}
+                                        style={{ fontFamily: 'Amatic SC, cursive' }}
                                     >
                                         {p.letter}
                                     </div>
@@ -302,7 +302,7 @@ export default function Home() {
                             <SectionLabel>{t('origin.label')}</SectionLabel>
                             <h2
                                 className="text-4xl md:text-5xl font-light mb-6"
-                                style={{ fontFamily: 'Rye, cursive' }}
+                                style={{ fontFamily: 'Amatic SC, cursive' }}
                             >
                                 {t('origin.title')}
                             </h2>
@@ -335,13 +335,13 @@ export default function Home() {
                                     <div className="relative z-10 pointer-events-none mt-auto">
                                         <div
                                             className="text-[3rem] font-light text-[#b8c4d4] opacity-50 mb-4 leading-none"
-                                            style={{ fontFamily: 'Rye, cursive', textShadow: '2px 4px 10px rgba(0,0,0,0.9)' }}
+                                            style={{ fontFamily: 'Amatic SC, cursive', textShadow: '2px 4px 10px rgba(0,0,0,0.9)' }}
                                         >
                                             {item.num}
                                         </div>
                                         <h4
                                             className="text-xl font-light text-[#ffffff] mb-3"
-                                            style={{ fontFamily: 'Rye, cursive', textShadow: '2px 4px 6px rgba(0,0,0,0.9)' }}
+                                            style={{ fontFamily: 'Amatic SC, cursive', textShadow: '2px 4px 6px rgba(0,0,0,0.9)' }}
                                         >
                                             {t(`origin.items.${item.key}.title`)}
                                         </h4>
@@ -363,7 +363,7 @@ export default function Home() {
                         <SectionLabel>{t('services.label')}</SectionLabel>
                         <h2
                             className="text-4xl md:text-5xl font-light mb-4"
-                            style={{ fontFamily: 'Rye, cursive' }}
+                            style={{ fontFamily: 'Amatic SC, cursive' }}
                         >
                             {t('services.title')}
                         </h2>
@@ -380,7 +380,7 @@ export default function Home() {
                                     <div className="text-2xl text-[#b8c4d4] opacity-60 mb-5">{s.icon}</div>
                                     <h3
                                         className="text-xl font-light text-[#f0ebe2] mb-3"
-                                        style={{ fontFamily: 'Rye, cursive' }}
+                                        style={{ fontFamily: 'Amatic SC, cursive' }}
                                     >
                                         {t(`services.categories.${s.key}.title`)}
                                     </h3>
@@ -413,7 +413,7 @@ export default function Home() {
                         <SectionLabel>{t('contact.label')}</SectionLabel>
                         <h2
                             className="text-4xl md:text-5xl font-light mb-4"
-                            style={{ fontFamily: 'Rye, cursive' }}
+                            style={{ fontFamily: 'Amatic SC, cursive' }}
                         >
                             {t('contact.title')}
                         </h2>

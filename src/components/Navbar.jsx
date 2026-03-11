@@ -96,7 +96,7 @@ export default function Navbar() {
                         {/* Home */}
                         <Link
                             to="/"
-                            style={{ fontFamily: 'Kalam, cursive', color: isActive('/') && location.pathname === '/' ? '#b8c4d4' : '#9a9a9a' }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', color: isActive('/') && location.pathname === '/' ? '#b8c4d4' : '#9a9a9a' }}
                             className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300"
                             onMouseEnter={e => { if (location.pathname !== '/') e.currentTarget.style.color = '#f0ebe2'; }}
                             onMouseLeave={e => { if (location.pathname !== '/') e.currentTarget.style.color = '#9a9a9a'; }}
@@ -114,7 +114,7 @@ export default function Navbar() {
                             {/* Trigger */}
                             <button
                                 style={{
-                                    fontFamily: 'Kalam, cursive',
+                                    fontFamily: 'Caveat Brush, cursive',
                                     color: isProductActive() ? '#b8c4d4' : productsOpen ? '#f0ebe2' : '#9a9a9a',
                                 }}
                                 className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300 flex items-center gap-1.5 bg-transparent border-none cursor-pointer"
@@ -177,7 +177,7 @@ export default function Navbar() {
                                     }}
                                     className="group"
                                 >
-                                    <span style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '0.52rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(240,235,226,0.3)', transition: 'color 0.25s' }}
+                                    <span style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '0.52rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(240,235,226,0.3)', transition: 'color 0.25s' }}
                                         onMouseEnter={e => e.currentTarget.style.color = 'rgba(184,196,212,0.7)'}
                                         onMouseLeave={e => e.currentTarget.style.color = 'rgba(240,235,226,0.3)'}
                                     >
@@ -202,10 +202,10 @@ export default function Navbar() {
                                                 boxShadow: `0 0 6px ${m.dot}60`,
                                             }} />
                                             <div>
-                                                <p style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', fontWeight: 300, fontSize: '1.1rem', color: '#f0ebe2', letterSpacing: '0.02em', lineHeight: 1.2, margin: 0 }}>
+                                                <p style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', fontWeight: 300, fontSize: '1.1rem', color: '#f0ebe2', letterSpacing: '0.02em', lineHeight: 1.2, margin: 0 }}>
                                                     {m.name}
                                                 </p>
-                                                <p style={{ fontFamily: 'Kalam, cursive', fontWeight: 300, fontSize: '0.5rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(240,235,226,0.3)', margin: '0.2rem 0 0', lineHeight: 1 }}>
+                                                <p style={{ fontFamily: 'Caveat Brush, cursive', fontWeight: 300, fontSize: '0.5rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(240,235,226,0.3)', margin: '0.2rem 0 0', lineHeight: 1 }}>
                                                     {m.sub}
                                                 </p>
                                             </div>
@@ -220,7 +220,7 @@ export default function Navbar() {
                             <Link
                                 key={l.to}
                                 to={l.to}
-                                style={{ fontFamily: 'Kalam, cursive', color: isActive(l.to) ? '#b8c4d4' : '#9a9a9a' }}
+                                style={{ fontFamily: 'Caveat Brush, cursive', color: isActive(l.to) ? '#b8c4d4' : '#9a9a9a' }}
                                 className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300"
                                 onMouseEnter={e => { if (!isActive(l.to)) e.currentTarget.style.color = '#f0ebe2'; }}
                                 onMouseLeave={e => { if (!isActive(l.to)) e.currentTarget.style.color = '#9a9a9a'; }}
@@ -234,7 +234,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4">
                         <button
                             onClick={toggleLang}
-                            style={{ fontFamily: 'Kalam, cursive' }}
+                            style={{ fontFamily: 'Caveat Brush, cursive' }}
                             className="text-[0.95rem] tracking-[0.2em] uppercase border border-[#3a3a3a] px-3 py-1.5 text-[#c8bfb0] hover:text-[#b8c4d4] hover:border-[#b8c4d4] transition-all duration-300"
                         >
                             {i18n.language === 'es' ? 'EN' : 'ES'}
@@ -258,7 +258,7 @@ export default function Navbar() {
                         {/* Home */}
                         <Link
                             to="/"
-                            style={{ fontFamily: 'Kalam, cursive', color: location.pathname === '/' ? '#b8c4d4' : '#9a9a9a' }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', color: location.pathname === '/' ? '#b8c4d4' : '#9a9a9a' }}
                             className="text-[0.9rem] tracking-[0.2em] uppercase transition-colors duration-300 py-3"
                         >
                             {t('nav.home')}
@@ -268,7 +268,7 @@ export default function Navbar() {
                         <div>
                             <button
                                 onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                                style={{ fontFamily: 'Kalam, cursive', color: isProductActive() ? '#b8c4d4' : '#9a9a9a' }}
+                                style={{ fontFamily: 'Caveat Brush, cursive', color: isProductActive() ? '#b8c4d4' : '#9a9a9a' }}
                                 className="text-[0.9rem] tracking-[0.2em] uppercase w-full text-left flex items-center justify-between py-3 bg-transparent border-none cursor-pointer"
                             >
                                 {t('nav.products')}
@@ -290,7 +290,7 @@ export default function Navbar() {
                             }}>
                                 <Link
                                     to="/productos"
-                                    style={{ fontFamily: 'Kalam, cursive', color: '#4a4a4a', display: 'block', paddingLeft: '1.5rem', paddingBottom: '0.75rem' }}
+                                    style={{ fontFamily: 'Caveat Brush, cursive', color: '#4a4a4a', display: 'block', paddingLeft: '1.5rem', paddingBottom: '0.75rem' }}
                                     className="text-[0.55rem] tracking-[0.2em] uppercase"
                                 >
                                     Colección completa
@@ -302,7 +302,7 @@ export default function Navbar() {
                                         style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1.5rem', paddingBottom: '0.75rem', textDecoration: 'none' }}
                                     >
                                         <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: m.dot, flexShrink: 0 }} />
-                                        <span style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#c8c8c8', letterSpacing: '0.02em' }}>
+                                        <span style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic', fontSize: '1.05rem', color: '#c8c8c8', letterSpacing: '0.02em' }}>
                                             {m.name}
                                         </span>
                                     </Link>
@@ -315,7 +315,7 @@ export default function Navbar() {
                             <Link
                                 key={l.to}
                                 to={l.to}
-                                style={{ fontFamily: 'Kalam, cursive', color: isActive(l.to) ? '#b8c4d4' : '#9a9a9a' }}
+                                style={{ fontFamily: 'Caveat Brush, cursive', color: isActive(l.to) ? '#b8c4d4' : '#9a9a9a' }}
                                 className="text-[0.9rem] tracking-[0.2em] uppercase transition-colors duration-300 py-3"
                             >
                                 {l.label}

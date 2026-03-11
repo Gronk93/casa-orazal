@@ -29,7 +29,7 @@ export default function BlogPost() {
                 <h3
                     key={i}
                     className="text-2xl font-light text-[#f0ebe2] mt-10 mb-4"
-                    style={{ fontFamily: 'Rye, cursive' }}
+                    style={{ fontFamily: 'Amatic SC, cursive' }}
                 >
                     {text.replace(/\*\*/g, '')}
                 </h3>
@@ -84,7 +84,7 @@ export default function BlogPost() {
 
                     <h1
                         className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6"
-                        style={{ fontFamily: 'Rye, cursive' }}
+                        style={{ fontFamily: 'Amatic SC, cursive' }}
                     >
                         {post.title[lang]}
                     </h1>
@@ -102,7 +102,7 @@ export default function BlogPost() {
                     {/* Excerpt */}
                     <p
                         className="text-[1.1rem] text-[#c8bfb0] leading-loose mb-12 italic border-l-2 border-[#b8c4d4] pl-6"
-                        style={{ fontFamily: 'Rye, cursive', fontSize: '1.25rem' }}
+                        style={{ fontFamily: 'Amatic SC, cursive', fontSize: '1.25rem' }}
                     >
                         {post.excerpt[lang]}
                     </p>

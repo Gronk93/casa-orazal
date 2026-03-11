@@ -105,7 +105,7 @@ export default function Services() {
                                             />
                                             <h3
                                                 className="text-xl font-light text-[#f0ebe2]"
-                                                style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic' }}
+                                                style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic' }}
                                             >
                                                 {t(`services.categories.${item.key}.title`)}
                                             </h3>
@@ -136,13 +136,13 @@ export default function Services() {
                     <Reveal>
                         <div
                             className="text-3xl text-[#b8c4d4] mb-4"
-                            style={{ fontFamily: 'Kalam, cursive', opacity: 0.65 }}
+                            style={{ fontFamily: 'Caveat Brush, cursive', opacity: 0.65 }}
                         >
                             ¿Listo para conversar?
                         </div>
                         <h2
                             className="text-3xl md:text-5xl font-light mb-8 text-[#f0ebe2]"
-                            style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic' }}
+                            style={{ fontFamily: 'Amatic SC, cursive', fontStyle: 'italic' }}
                         >
                             Diseñamos la experiencia<br />
                             <span className="text-[#b8c4d4]">a tu medida</span>
