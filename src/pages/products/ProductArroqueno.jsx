@@ -120,7 +120,7 @@ export default function ProductArroqueno() {
                 <div style={{
                     position: 'absolute', top: '10rem', left: '4%',
                     fontFamily: 'Rye, cursive',
-                    fontSize: 'clamp(6rem, 18vw, 16rem)',
+                    fontSize: 'clamp(3.5rem, 15vw, 16rem)',
                     fontWeight: 200, color: 'rgba(74,138,74,0.05)',
                     lineHeight: 1, userSelect: 'none', pointerEvents: 'none',
                 }}>
@@ -136,7 +136,7 @@ export default function ProductArroqueno() {
                     <div style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>
                         <h1 style={{
                             fontFamily: 'Rye, cursive',
-                            fontSize: 'clamp(5rem, 18vw, 17rem)',
+                            fontSize: 'clamp(3rem, 15vw, 17rem)',
                             fontWeight: 200,
                             fontStyle: 'italic',
                             lineHeight: 0.88,

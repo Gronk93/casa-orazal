@@ -89,11 +89,9 @@ export default function Home() {
             >
                 {/* -- Fondo limpio -- */}
                 <div
-                    className="absolute inset-0 pointer-events-none"
+                    className="absolute inset-0 pointer-events-none bg-no-repeat bg-[length:140%_auto] bg-[position:45%_35%] sm:bg-cover sm:bg-center"
                     style={{
                         backgroundImage: "url('/images/HERO 1.jpg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
                     }}
                 />
 
@@ -122,7 +120,7 @@ export default function Home() {
                         className="animate-fade-up"
                         style={{
                             fontFamily: '"Amatic SC", cursive',
-                            fontSize: 'clamp(3rem, 7vw, 6rem)',
+                            fontSize: 'clamp(2.5rem, 8vw, 6rem)',
                             fontWeight: 700,
                             lineHeight: 1,
                             margin: 0,

@@ -153,7 +153,7 @@ export default function ProductPapalometl() {
                     <div style={{ width: '100%', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(200,215,235,0.3), transparent)', marginBottom: '1.5rem' }} />
                     <h1 style={{
                         fontFamily: 'Rye, cursive',
-                        fontSize: 'clamp(3rem, 10vw, 9rem)',
+                        fontSize: 'clamp(2.5rem, 10vw, 9rem)',
                         fontWeight: 200,
                         fontStyle: 'italic',
                         lineHeight: 0.9,

@@ -56,13 +56,13 @@ export default function Store() {
                         {t('store.label')}
                     </div>
                     <h1
-                        className="text-5xl md:text-7xl font-light mb-6"
+                        className="text-4xl md:text-5xl lg:text-7xl font-light mb-6"
                         style={{ fontFamily: 'Rye, cursive', fontStyle: 'italic', color: '#8acc8a' }}
                     >
                         {t('store.title')}
                     </h1>
                     <p
-                        className="text-[1.1rem] md:text-[1.3rem] max-w-2xl mx-auto leading-relaxed"
+                        className="text-[1rem] md:text-[1.3rem] max-w-2xl mx-auto leading-relaxed px-4"
                         style={{ fontFamily: '"Caveat Brush", cursive', color: '#7aaa7a' }}
                     >
                         {t('store.subtitle')}
