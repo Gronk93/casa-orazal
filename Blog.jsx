@@ -23,21 +23,15 @@ export default function Blog() {
     const { t, i18n } = useTranslation();
     const lang = i18n.language.startsWith('en') ? 'en' : 'es';
 
-    // Audio Player State & Setup
-    const audioRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [durationStr, setDurationStr] = useState("0:00");
-    const [currentTimeStr, setCurrentTimeStr] = useState("0:00");
-
-    // Drag-to-Scroll State
+    // State for drag and modal
     const carouselRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-
-    // Modal State
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Audio State for Modal Cleanup (Optional native pause when closing modal)
+    const audioRef = useRef(null);
 
     const onMouseDown = (e) => {
         setIsDragging(true);
@@ -60,67 +54,6 @@ export default function Blog() {
         const walk = (x - startX) * 1.5; // multiplier
         carouselRef.current.scrollLeft = scrollLeft - walk;
     };
-
-    const formatTime = (time) => {
-        if (isNaN(time)) return "0:00";
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
-
-    const togglePlay = async (e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        if (audioRef.current) {
-            try {
-                if (isPlaying) {
-                    audioRef.current.pause();
-                    setIsPlaying(false);
-                } else {
-                    // Importante para móviles: asegurar que esté cargado antes de dar play
-                    if (audioRef.current.readyState === 0) {
-                        audioRef.current.load();
-                    }
-                    const playPromise = audioRef.current.play();
-
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            setIsPlaying(true);
-                        }).catch(error => {
-                            console.error("Audio playback failed on mobile:", error);
-                            setIsPlaying(false);
-                            // Podríamos mostrar un toast/alerta aquí si sigue fallando
-                        });
-                    } else {
-                        setIsPlaying(true);
-                    }
-                }
-            } catch (err) {
-                console.error("Error toggling audio:", err);
-            }
-        }
-    };
-
-    const handleTimeUpdate = () => {
-        if (audioRef.current) {
-            const current = audioRef.current.currentTime;
-            const duration = audioRef.current.duration;
-            setCurrentTimeStr(formatTime(current));
-            if (duration > 0) {
-                setProgress((current / duration) * 100);
-            }
-        }
-    };
-
-    const handleLoadedMetadata = () => {
-        if (audioRef.current) {
-            setDurationStr(formatTime(audioRef.current.duration));
-        }
-    };
-
     return (
         <div className="bg-[#080808] text-[#f0ebe2] min-h-screen relative">
             {/* --- PREMIUM HERO CON SCROLL --- */}
@@ -310,9 +243,8 @@ export default function Blog() {
                         <button
                             onClick={() => {
                                 setIsModalOpen(false);
-                                if (audioRef.current && isPlaying) {
+                                if (audioRef.current) {
                                     audioRef.current.pause();
-                                    setIsPlaying(false);
                                 }
                             }}
                             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors backdrop-blur-md"
@@ -334,68 +266,25 @@ export default function Blog() {
 
                     {/* Reproductor de Audio Flotante en la parte inferior */}
                     {/* Añadimos z-50 y padding extra abajo (pb-10) para evitar que la barra del navegador móvil lo tape */}
-                    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-3xl border-t border-white/10 p-4 md:p-6 pb-12 md:pb-8 flex justify-center z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-                        <div className="w-full max-w-3xl flex flex-col md:flex-row items-center gap-4 md:gap-8">
-
-                            {/* Botón Play/Pause */}
-                            <button
-                                onClick={togglePlay}
-                                className="w-16 h-16 rounded-full flex items-center justify-center bg-[#b8c4d4] text-black hover:bg-white active:scale-95 transition-all flex-shrink-0 cursor-pointer shadow-[0_0_30px_rgba(184,196,212,0.3)]"
+                    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-3xl border-t border-white/10 p-4 pb-10 flex justify-center z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+                        <div className="w-full max-w-3xl flex flex-col items-center gap-2">
+                            <p className="text-[#f0ebe2] text-[0.65rem] md:text-xs font-mono tracking-widest uppercase opacity-70 mb-2">
+                                Cápsula Sonora: Mezcal Casa Orazal
+                            </p>
+                            {/* REPRODUCTOR NATIVO DE HTML5 */}
+                            <audio
+                                ref={audioRef}
+                                id="modal-audio"
+                                controls
+                                preload="none"
+                                className="w-full h-12"
+                                style={{ borderRadius: '8px' }}
                             >
-                                {isPlaying ? (
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                        <rect x="6" y="4" width="4" height="16"></rect>
-                                        <rect x="14" y="4" width="4" height="16"></rect>
-                                    </svg>
-                                ) : (
-                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
-                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                    </svg>
-                                )}
-                            </button>
-
-                            {/* Controles de Tiempo */}
-                            <div className="flex-1 w-full min-w-0 flex flex-col">
-                                <p className="text-[#f0ebe2] text-sm md:text-base font-medium truncate mb-2 md:mb-3 tracking-wide" style={{ fontFamily: 'var(--font-artisan)' }}>
-                                    CÁPSULA SONORA: MEZCAL CASA ORAZAL
-                                </p>
-                                <div className="flex items-center gap-3 w-full">
-                                    <div className="text-[0.7rem] text-[#999] tabular-nums font-mono">{currentTimeStr}</div>
-
-                                    {/* Barra de progreso interactiva */}
-                                    <div
-                                        className="flex-1 h-2 md:h-2.5 bg-[#1a1a1a] rounded-full overflow-hidden relative cursor-pointer"
-                                        onClick={(e) => {
-                                            if (audioRef.current && audioRef.current.duration) {
-                                                const rect = e.currentTarget.getBoundingClientRect();
-                                                const percent = (e.clientX - rect.left) / rect.width;
-                                                audioRef.current.currentTime = percent * audioRef.current.duration;
-                                            }
-                                        }}
-                                    >
-                                        <div
-                                            className="absolute top-0 left-0 h-full bg-[#b8c4d4] shadow-[0_0_15px_#b8c4d4] transition-all duration-100 ease-linear pointer-events-none"
-                                            style={{ width: `${progress}%` }}
-                                        />
-                                    </div>
-
-                                    <div className="text-[0.7rem] text-[#999] tabular-nums font-mono">{durationStr}</div>
-                                </div>
-                            </div>
+                                <source src="/audios/mezcal_casa_orazal.m4a" type="audio/mp4" />
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
                         </div>
                     </div>
-
-                    {/* Elemento Oculto de Audio - Se agrega 'playsInline' por Safari iOS */}
-                    <audio
-                        ref={audioRef}
-                        id="modal-audio"
-                        preload="auto"
-                        playsInline
-                        src="/audios/mezcal_casa_orazal.m4a"
-                        onTimeUpdate={handleTimeUpdate}
-                        onLoadedMetadata={handleLoadedMetadata}
-                        onEnded={() => setIsPlaying(false)}
-                    />
                 </div>
             )}
         </div>
