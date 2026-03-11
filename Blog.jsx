@@ -322,18 +322,19 @@ export default function Blog() {
                     </div>
 
                     {/* Contenido Visual (Scrollable en móviles) */}
-                    <div className="flex-1 overflow-auto w-full flex justify-center mt-12 mb-[120px] md:mb-[100px]">
-                        <div className="w-full max-w-5xl px-4 md:px-8 py-4">
+                    <div className="flex-1 overflow-auto w-full flex justify-center mt-16 mb-[160px] md:mb-[120px]">
+                        <div className="w-full max-w-5xl px-2 md:px-8 py-4 flex items-center min-h-full">
                             <img
                                 src="/images/infografia.png"
                                 alt="Infografía Detallada"
-                                className="w-full h-auto object-contain rounded-lg shadow-2xl"
+                                className="w-full h-auto object-contain shadow-2xl"
                             />
                         </div>
                     </div>
 
                     {/* Reproductor de Audio Flotante en la parte inferior */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-white/10 p-4 md:p-6 pb-6 md:pb-8 flex justify-center">
+                    {/* Añadimos z-50 y padding extra abajo (pb-10) para evitar que la barra del navegador móvil lo tape */}
+                    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-3xl border-t border-white/10 p-4 md:p-6 pb-12 md:pb-8 flex justify-center z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
                         <div className="w-full max-w-3xl flex flex-col md:flex-row items-center gap-4 md:gap-8">
 
                             {/* Botón Play/Pause */}
