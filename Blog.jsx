@@ -177,12 +177,12 @@ export default function Blog() {
                         // 1. Tarjeta Principal (Audio + Infografía)
                         if (post.slug === 'proceso-ancestral-mezcal') {
                             return (
-                                <div key={post.slug} className="snap-center shrink-0 w-[90vw] md:w-[85vw] lg:w-[1100px] h-[650px] md:h-[700px] relative top-0 hover:-translate-y-2 transition-transform duration-500">
+                                <div key={post.slug} className="snap-center shrink-0 w-[90vw] md:w-[85vw] lg:w-[1100px] h-[75vh] md:h-[70vh] min-h-[550px] relative top-0 hover:-translate-y-2 transition-transform duration-500">
                                     <article
                                         className="h-full w-full flex flex-col md:flex-row card-glow overflow-hidden group rounded-xl bg-[#020202]"
                                         style={{ border: '1px solid #1a1a1a', boxShadow: '0 20px 40px rgba(0,0,0,0.8)' }}
                                     >
-                                        <div className="p-8 md:p-12 flex flex-col justify-center flex-1 order-2 md:order-1 relative z-10 w-full md:max-w-[45%]">
+                                        <div className="p-6 md:p-12 flex flex-col justify-center flex-1 order-2 md:order-1 relative z-10 w-full md:max-w-[45%] h-1/2 md:h-full">
 
                                             <p className="text-[0.65rem] tracking-[0.3em] uppercase text-[#b8c4d4] opacity-70 mb-4 font-mono">
                                                 Cápsula Sonora
@@ -192,11 +192,11 @@ export default function Blog() {
                                                 {post.title[lang]}
                                             </h2>
 
-                                            <p className="text-[1.05rem] md:text-[1.2rem] text-[#c8bfb0] leading-loose mb-10 overflow-auto hide-scrollbar">
+                                            <p className="text-[1.05rem] md:text-[1.2rem] text-[#c8bfb0] leading-snug md:leading-loose mb-6 overflow-hidden md:overflow-auto hide-scrollbar line-clamp-4 md:line-clamp-none">
                                                 {post.excerpt[lang]}
                                             </p>
 
-                                            <div className="rounded-2xl p-4 md:p-5 flex items-center gap-5 mt-auto" style={{ background: 'linear-gradient(145deg, #0c0c0c, #050505)', border: '1px solid #1f1f1f', boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.5)' }}>
+                                            <div className="rounded-2xl p-3 md:p-5 flex items-center gap-5 mt-auto" style={{ background: 'linear-gradient(145deg, #0c0c0c, #050505)', border: '1px solid #1f1f1f', boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.5)' }}>
                                                 <button
                                                     onClick={(e) => {
                                                         e.preventDefault();
@@ -211,7 +211,7 @@ export default function Blog() {
                                         </div>
 
                                         <div
-                                            className="flex-1 relative overflow-hidden order-1 md:order-2 min-h-[300px] md:min-h-full bg-[#050505] flex items-center justify-center cursor-pointer"
+                                            className="flex-1 relative overflow-hidden order-1 md:order-2 h-1/2 md:h-full md:min-h-full bg-[#050505] flex items-center justify-center cursor-pointer"
                                             onClick={(e) => {
                                                 if (!isDragging) {
                                                     setIsModalOpen(true);
