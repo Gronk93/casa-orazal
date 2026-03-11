@@ -253,38 +253,37 @@ export default function Blog() {
                         </button>
                     </div>
 
-                    {/* Contenido Visual (Scrollable en móviles) */}
-                    <div className="flex-1 overflow-auto w-full flex justify-center mt-16 mb-[160px] md:mb-[120px]">
-                        <div className="w-full max-w-5xl px-2 md:px-8 py-4 flex items-center min-h-full">
-                            <img
-                                src="/images/infografia.png"
-                                alt="Infografía Detallada"
-                                className="w-full h-auto object-contain shadow-2xl"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Reproductor de Audio Flotante en la parte inferior */}
-                    {/* Añadimos z-50 y padding extra abajo (pb-10) para evitar que la barra del navegador móvil lo tape */}
-                    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-3xl border-t border-white/10 p-4 pb-10 flex justify-center z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-                        <div className="w-full max-w-3xl flex flex-col items-center gap-2">
-                            <p className="text-[#f0ebe2] text-[0.65rem] md:text-xs font-mono tracking-widest uppercase opacity-70 mb-2">
+                    {/* Contenido Visual con Reproductor Integrado Arriba (Scrollable en móviles) */}
+                    <div className="flex-1 overflow-auto w-full flex flex-col items-center mt-16 mb-6">
+                        {/* REPRODUCTOR NATIVO DE HTML5 - Ahora integrado en el flujo, no fijo */}
+                        <div className="w-full max-w-3xl px-4 md:px-8 pt-4 pb-6 flex flex-col items-center gap-3">
+                            <p className="text-[#f0ebe2] text-xs md:text-sm font-mono tracking-widest uppercase opacity-80 text-center">
                                 Cápsula Sonora: Mezcal Casa Orazal
                             </p>
-                            {/* REPRODUCTOR NATIVO DE HTML5 */}
                             <audio
                                 ref={audioRef}
                                 id="modal-audio"
                                 controls
                                 preload="none"
-                                className="w-full h-12"
+                                className="w-full h-12 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
                                 style={{ borderRadius: '8px' }}
                             >
                                 <source src="/audios/mezcal_casa_orazal.m4a" type="audio/mp4" />
                                 Tu navegador no soporta el elemento de audio.
                             </audio>
                         </div>
+
+                        {/* Infografía */}
+                        <div className="w-full max-w-5xl px-2 md:px-8 pb-10 flex items-center justify-center">
+                            <img
+                                src="/images/infografia.png"
+                                alt="Infografía Detallada"
+                                className="w-full h-auto object-contain shadow-2xl rounded-lg"
+                            />
+                        </div>
                     </div>
+
+
                 </div>
             )}
         </div>
