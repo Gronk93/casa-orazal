@@ -1,7 +1,7 @@
 ﻿import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, X, Maximize2 } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 
 function Reveal({ children, delay = 0, className = '' }) {
@@ -35,6 +35,9 @@ export default function Blog() {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+
+    // Modal State
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const onMouseDown = (e) => {
         setIsDragging(true);
@@ -194,56 +197,40 @@ export default function Blog() {
                                             </p>
 
                                             <div className="rounded-2xl p-4 md:p-5 flex items-center gap-5 mt-auto" style={{ background: 'linear-gradient(145deg, #0c0c0c, #050505)', border: '1px solid #1f1f1f', boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.5)' }}>
-                                                <button onClick={togglePlay} className="w-14 h-14 rounded-full flex items-center justify-center bg-[#b8c4d4] text-black hover:bg-white hover:scale-105 active:scale-95 transition-all flex-shrink-0 cursor-pointer shadow-[0_0_20px_rgba(184,196,212,0.2)]">
-                                                    {isPlaying ? (
-                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                                            <rect x="6" y="4" width="4" height="16"></rect>
-                                                            <rect x="14" y="4" width="4" height="16"></rect>
-                                                        </svg>
-                                                    ) : (
-                                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
-                                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                                        </svg>
-                                                    )}
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
+                                                        setIsModalOpen(true);
+                                                    }}
+                                                    className="w-full h-12 rounded-lg flex items-center justify-center gap-3 bg-[#b8c4d4] text-black hover:bg-white transition-all cursor-pointer font-bold tracking-widest uppercase text-xs"
+                                                >
+                                                    <Maximize2 size={16} /> Abrir Infografía Interactiva
                                                 </button>
-
-                                                <div className="flex-1 min-w-0">
-                                                    <p className="text-[#e0e0e0] text-sm md:text-base font-medium truncate mb-2 tracking-wide" style={{ fontFamily: 'var(--font-ui)' }}>Mezcal Casa Orazal</p>
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="text-[0.65rem] text-[#666] tabular-nums font-mono">{currentTimeStr}</div>
-                                                        <div className="flex-1 h-1.5 bg-[#1a1a1a] rounded-full overflow-hidden relative cursor-pointer group-hover:bg-[#222]" onClick={(e) => {
-                                                            if (audioRef.current && audioRef.current.duration) {
-                                                                const rect = e.currentTarget.getBoundingClientRect();
-                                                                const percent = (e.clientX - rect.left) / rect.width;
-                                                                audioRef.current.currentTime = percent * audioRef.current.duration;
-                                                            }
-                                                        }}>
-                                                            <div className="absolute top-0 left-0 h-full bg-[#b8c4d4] rounded-full shadow-[0_0_10px_#b8c4d4] transition-all duration-100 ease-linear pointer-events-none" style={{ width: `${progress}%` }}></div>
-                                                        </div>
-                                                        <div className="text-[0.65rem] text-[#666] tabular-nums font-mono">{durationStr}</div>
-                                                    </div>
-                                                </div>
                                             </div>
-
-                                            <audio
-                                                ref={audioRef}
-                                                id="blog-audio"
-                                                preload="metadata"
-                                                src="/audios/mezcal_casa_orazal.m4a"
-                                                onTimeUpdate={handleTimeUpdate}
-                                                onLoadedMetadata={handleLoadedMetadata}
-                                                onEnded={() => setIsPlaying(false)}
-                                            />
                                         </div>
 
-                                        <div className="flex-1 relative overflow-hidden order-1 md:order-2 min-h-[300px] md:min-h-full bg-[#050505] flex items-center justify-center">
+                                        <div
+                                            className="flex-1 relative overflow-hidden order-1 md:order-2 min-h-[300px] md:min-h-full bg-[#050505] flex items-center justify-center cursor-pointer"
+                                            onClick={(e) => {
+                                                if (!isDragging) {
+                                                    setIsModalOpen(true);
+                                                }
+                                            }}
+                                        >
                                             <img
                                                 src="/images/infografia.png"
                                                 alt="Infografía Casa Orazal"
                                                 className="absolute inset-0 w-full h-full object-cover md:object-contain object-top md:object-center opacity-95 transition-transform duration-1000 group-hover:scale-[1.03]"
                                             />
-                                            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020202] to-transparent hidden md:block" />
-                                            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#020202] to-transparent block md:hidden" />
+                                            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020202] to-transparent hidden md:block pointer-events-none" />
+                                            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#020202] to-transparent block md:hidden pointer-events-none" />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+                                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                                <div className="bg-black/60 backdrop-blur-md text-white px-6 py-3 rounded-full flex items-center gap-2 text-xs tracking-widest uppercase font-bold border border-white/10 shadow-2xl">
+                                                    <Maximize2 size={16} /> Ampliar
+                                                </div>
+                                            </div>
                                         </div>
                                     </article>
                                 </div>
@@ -290,6 +277,96 @@ export default function Blog() {
                     })}
                 </div>
             </section>
+
+            {/* --- MODAL DE INFOGRAFÍA Y AUDIO --- */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-[100] flex flex-col bg-[#050505] text-white">
+                    {/* Header del Modal */}
+                    <div className="w-full flex justify-between items-center p-4 md:p-6 bg-gradient-to-b from-black/80 to-transparent absolute top-0 left-0 right-0 z-10">
+                        <span className="font-mono text-xs tracking-widest text-[#b8c4d4] uppercase">Infografía Interactiva</span>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors backdrop-blur-md"
+                        >
+                            <X size={20} />
+                        </button>
+                    </div>
+
+                    {/* Contenido Visual (Scrollable en móviles) */}
+                    <div className="flex-1 overflow-auto w-full flex justify-center mt-12 mb-[120px] md:mb-[100px]">
+                        <div className="w-full max-w-5xl px-4 md:px-8 py-4">
+                            <img
+                                src="/images/infografia.png"
+                                alt="Infografía Detallada"
+                                className="w-full h-auto object-contain rounded-lg shadow-2xl"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Reproductor de Audio Flotante en la parte inferior */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-white/10 p-4 md:p-6 pb-6 md:pb-8 flex justify-center">
+                        <div className="w-full max-w-3xl flex flex-col md:flex-row items-center gap-4 md:gap-8">
+
+                            {/* Botón Play/Pause */}
+                            <button
+                                onClick={togglePlay}
+                                className="w-16 h-16 rounded-full flex items-center justify-center bg-[#b8c4d4] text-black hover:bg-white active:scale-95 transition-all flex-shrink-0 cursor-pointer shadow-[0_0_30px_rgba(184,196,212,0.3)]"
+                            >
+                                {isPlaying ? (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="6" y="4" width="4" height="16"></rect>
+                                        <rect x="14" y="4" width="4" height="16"></rect>
+                                    </svg>
+                                ) : (
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                )}
+                            </button>
+
+                            {/* Controles de Tiempo */}
+                            <div className="flex-1 w-full min-w-0 flex flex-col">
+                                <p className="text-[#f0ebe2] text-sm md:text-base font-medium truncate mb-2 md:mb-3 tracking-wide" style={{ fontFamily: 'var(--font-artisan)' }}>
+                                    CÁPSULA SONORA: MEZCAL CASA ORAZAL
+                                </p>
+                                <div className="flex items-center gap-3 w-full">
+                                    <div className="text-[0.7rem] text-[#999] tabular-nums font-mono">{currentTimeStr}</div>
+
+                                    {/* Barra de progreso interactiva */}
+                                    <div
+                                        className="flex-1 h-2 md:h-2.5 bg-[#1a1a1a] rounded-full overflow-hidden relative cursor-pointer"
+                                        onClick={(e) => {
+                                            if (audioRef.current && audioRef.current.duration) {
+                                                const rect = e.currentTarget.getBoundingClientRect();
+                                                const percent = (e.clientX - rect.left) / rect.width;
+                                                audioRef.current.currentTime = percent * audioRef.current.duration;
+                                            }
+                                        }}
+                                    >
+                                        <div
+                                            className="absolute top-0 left-0 h-full bg-[#b8c4d4] shadow-[0_0_15px_#b8c4d4] transition-all duration-100 ease-linear pointer-events-none"
+                                            style={{ width: `${progress}%` }}
+                                        />
+                                    </div>
+
+                                    <div className="text-[0.7rem] text-[#999] tabular-nums font-mono">{durationStr}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Elemento Oculto de Audio */}
+                    <audio
+                        ref={audioRef}
+                        id="modal-audio"
+                        preload="metadata"
+                        src="/audios/mezcal_casa_orazal.m4a"
+                        onTimeUpdate={handleTimeUpdate}
+                        onLoadedMetadata={handleLoadedMetadata}
+                        onEnded={() => setIsPlaying(false)}
+                    />
+                </div>
+            )}
         </div>
     );
 }
