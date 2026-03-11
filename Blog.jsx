@@ -29,6 +29,7 @@ export default function Blog() {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     // Audio State for Modal Cleanup (Optional native pause when closing modal)
     const audioRef = useRef(null);
@@ -53,6 +54,34 @@ export default function Blog() {
         const x = e.pageX - carouselRef.current.offsetLeft;
         const walk = (x - startX) * 1.5; // multiplier
         carouselRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleImageClick = async () => {
+        if (!audioRef.current) return;
+
+        try {
+            if (isPlaying) {
+                audioRef.current.pause();
+                setIsPlaying(false);
+            } else {
+                if (audioRef.current.readyState === 0) {
+                    audioRef.current.load();
+                }
+                const playPromise = audioRef.current.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        setIsPlaying(true);
+                    }).catch(error => {
+                        console.error("Autoplay prevented:", error);
+                        setIsPlaying(false);
+                    });
+                } else {
+                    setIsPlaying(true);
+                }
+            }
+        } catch (error) {
+            console.error("Audio error:", error);
+        }
     };
     return (
         <div className="bg-[#080808] text-[#f0ebe2] min-h-screen relative">
@@ -245,6 +274,7 @@ export default function Blog() {
                                 setIsModalOpen(false);
                                 if (audioRef.current) {
                                     audioRef.current.pause();
+                                    setIsPlaying(false);
                                 }
                             }}
                             className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -254,35 +284,62 @@ export default function Blog() {
                     </div>
 
                     {/* Area Central (ÚNICA PARTE SCROLLABLE) */}
-                    <div className="flex-1 overflow-auto w-full flex flex-col items-center bg-[#0a0a0a]">
-                        <div className="w-full max-w-5xl px-2 md:px-8 py-6 flex items-center justify-center">
+                    <div className="flex-1 overflow-auto w-full flex flex-col items-center bg-[#0a0a0a] relative">
+
+                        {/* THE INFOGRAPHIC ACTS AS THE BUTTON */}
+                        <div
+                            className="w-full max-w-5xl px-2 md:px-8 py-6 relative cursor-pointer flex justify-center mt-2 group"
+                            onClick={handleImageClick}
+                        >
                             <img
                                 src="/images/infografia.png"
                                 alt="Infografía Detallada"
-                                className="w-full h-auto object-contain rounded-lg"
+                                className={`w-full h-auto object-contain rounded-lg transition-all duration-300 ${isPlaying ? 'opacity-100' : 'opacity-60 blur-[1px]'}`}
                             />
+
+                            {/* OVERLAY PLAY/PAUSE INDICATOR */}
+                            {!isPlaying && (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)] mb-4 group-hover:bg-white/20 transition-all group-hover:scale-110">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '6px' }}>
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                    </div>
+                                    <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-white uppercase drop-shadow-lg font-bold">
+                                        Toca la imagen para reproducir la cápsula sonora
+                                    </span>
+                                </div>
+                            )}
+
+                            {isPlaying && (
+                                <div className="absolute top-10 right-10 flex flex-col items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/10 shadow-lg mb-2">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                            <rect x="6" y="4" width="4" height="16"></rect>
+                                            <rect x="14" y="4" width="4" height="16"></rect>
+                                        </svg>
+                                    </div>
+                                    <span className="font-mono text-[0.65rem] tracking-widest text-white uppercase drop-shadow-md bg-black/40 px-3 py-1 rounded-full">
+                                        Pausar
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     </div>
 
-                    {/* Footer Fijo en la caja Flex (Non-scrollable) */}
-                    <div className="w-full shrink-0 bg-[#050505] border-t border-white/10 flex flex-col items-center px-4 py-6 md:py-8 pb-10 md:pb-8">
-                        <div className="w-full max-w-3xl flex flex-col items-center gap-3">
-                            <p className="text-[#f0ebe2] text-xs md:text-sm font-mono tracking-widest uppercase opacity-80 text-center">
-                                Cápsula Sonora: Maguey Ancestral
-                            </p>
-                            <audio
-                                ref={audioRef}
-                                id="modal-audio"
-                                controls
-                                preload="none"
-                                className="w-full h-12 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
-                                style={{ borderRadius: '8px' }}
-                            >
-                                <source src="/audios/mezcal_casa_orazal.m4a" type="audio/mp4" />
-                                Tu navegador no soporta el elemento de audio.
-                            </audio>
-                        </div>
-                    </div>
+                    {/* HIDDEN NATIVE AUDIO */}
+                    <audio
+                        ref={audioRef}
+                        id="modal-audio"
+                        preload="metadata"
+                        playsInline
+                        onEnded={() => setIsPlaying(false)}
+                        onPause={() => setIsPlaying(false)}
+                        onPlay={() => setIsPlaying(true)}
+                        className="hidden"
+                    >
+                        <source src="/audios/mezcal_casa_orazal.m4a" type="audio/mp4" />
+                    </audio>
                 </div>
             )}
         </div>
