@@ -60,8 +60,8 @@ export default function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || open
-                    ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#232323]'
-                    : 'bg-[#0a0a0a]/50 backdrop-blur-md border-b border-transparent'
+                    ? 'bg-[#141414]/98 backdrop-blur-md border-b border-[#3a3a3a]'
+                    : 'bg-[#141414]/85 backdrop-blur-md border-b border-[#232323]'
                     }`}
             >
                 <div className="container-orazal flex items-center justify-between h-16 lg:h-20 px-4">
@@ -96,10 +96,10 @@ export default function Navbar() {
                         {/* Home */}
                         <Link
                             to="/"
-                            style={{ fontFamily: 'Caveat Brush, cursive', color: isActive('/') && location.pathname === '/' ? '#b8c4d4' : '#9a9a9a' }}
-                            className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300"
+                            style={{ fontFamily: 'Caveat Brush, cursive', color: isActive('/') && location.pathname === '/' ? '#b8c4d4' : '#c8bfb0' }}
+                            className="text-[1.2rem] tracking-[0.1em] uppercase transition-colors duration-300"
                             onMouseEnter={e => { if (location.pathname !== '/') e.currentTarget.style.color = '#f0ebe2'; }}
-                            onMouseLeave={e => { if (location.pathname !== '/') e.currentTarget.style.color = '#9a9a9a'; }}
+                            onMouseLeave={e => { if (location.pathname !== '/') e.currentTarget.style.color = '#c8bfb0'; }}
                         >
                             {t('nav.home')}
                         </Link>
@@ -115,9 +115,9 @@ export default function Navbar() {
                             <button
                                 style={{
                                     fontFamily: 'Caveat Brush, cursive',
-                                    color: isProductActive() ? '#b8c4d4' : productsOpen ? '#f0ebe2' : '#9a9a9a',
+                                    color: isProductActive() ? '#b8c4d4' : productsOpen ? '#f0ebe2' : '#c8bfb0',
                                 }}
-                                className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300 flex items-center gap-1.5 bg-transparent border-none cursor-pointer"
+                                className="text-[1.2rem] tracking-[0.1em] uppercase transition-colors duration-300 flex items-center gap-1.5 bg-transparent border-none cursor-pointer"
                             >
                                 {t('nav.products')}
                                 <ChevronDown
@@ -135,10 +135,10 @@ export default function Navbar() {
                                     position: 'absolute',
                                     top: 'calc(100% + 1rem)',
                                     left: '50%',
-                                    minWidth: '260px',
-                                    background: 'rgba(9,9,9,0.97)',
+                                    minWidth: '280px',
+                                    background: 'rgba(28,28,28,0.98)',
                                     backdropFilter: 'blur(20px)',
-                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    border: '1px solid rgba(255,255,255,0.1)',
                                     padding: '1rem 0',
                                     opacity: productsOpen ? 1 : 0,
                                     pointerEvents: productsOpen ? 'auto' : 'none',
@@ -151,13 +151,13 @@ export default function Navbar() {
                                 {/* Puntero superior */}
                                 <div style={{
                                     position: 'absolute',
-                                    top: '-5px',
+                                    top: '-6px',
                                     left: '50%',
                                     transform: 'translateX(-50%)',
-                                    width: '8px',
-                                    height: '8px',
-                                    background: 'rgba(9,9,9,0.97)',
-                                    border: '1px solid rgba(255,255,255,0.06)',
+                                    width: '12px',
+                                    height: '12px',
+                                    background: 'rgba(28,28,28,0.98)',
+                                    border: '1px solid rgba(255,255,255,0.1)',
                                     borderBottom: 'none',
                                     borderRight: 'none',
                                     rotate: '45deg',
@@ -220,10 +220,10 @@ export default function Navbar() {
                             <Link
                                 key={l.to}
                                 to={l.to}
-                                style={{ fontFamily: 'Caveat Brush, cursive', color: isActive(l.to) ? '#b8c4d4' : '#9a9a9a' }}
-                                className="text-[0.95rem] tracking-[0.2em] uppercase transition-colors duration-300"
+                                style={{ fontFamily: 'Caveat Brush, cursive', color: isActive(l.to) ? '#b8c4d4' : '#c8bfb0' }}
+                                className="text-[1.2rem] tracking-[0.1em] uppercase transition-colors duration-300"
                                 onMouseEnter={e => { if (!isActive(l.to)) e.currentTarget.style.color = '#f0ebe2'; }}
-                                onMouseLeave={e => { if (!isActive(l.to)) e.currentTarget.style.color = '#9a9a9a'; }}
+                                onMouseLeave={e => { if (!isActive(l.to)) e.currentTarget.style.color = '#c8bfb0'; }}
                             >
                                 {l.label}
                             </Link>
